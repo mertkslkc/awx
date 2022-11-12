@@ -3,23 +3,13 @@
   remote_user: root
 
   tasks:
-    - name: Add node key
-      sudo: yes
-      apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
-
-    - name: Add repos
-      sudo: yes
-      apt_repository: repo='deb https://deb.nodesource.com/node precise main'
-
-    - name: Install packages
-      sudo: yes
-      apt: upgrade=dist
-      apt: pkg= state=installed update_cache=yes
-      with_items:
-
-      - nodejs
-      - git-core
-
-    - name: Setup Forever
-      sudo: yes
-      npm: name=forever global=yes
+    - name: latest version of httpd and firewalld installed
+      yum:
+      name:
+      - httpd
+      - firewalld
+      state: latest
+    - name: test html page is installed
+      copy:
+        content: "Welcome to the example.com intranet!\n"
+        dest: /var/www/html/index.html
