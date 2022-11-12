@@ -1,14 +1,13 @@
-- hosts: localhost
-  gather_facts: false
-  remote_user: root
-
+- name: Enable intranet services
+  hosts: localhost
+  become: yes
   tasks:
     - name: latest version of httpd and firewalld installed
       yum:
-      name:
-      - httpd
-      - firewalld
-      state: latest
+        name:
+          - httpd
+          - firewalld
+        state: latest
     - name: test html page is installed
       copy:
         content: "Welcome to the example.com intranet!\n"
