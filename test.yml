@@ -1,14 +1,8 @@
-- name: Enable intranet services
-  hosts: localhost
+- name: Grup ekleme talimatlarını gönder
+  hosts: localhosts
   become: yes
   tasks:
-    - name: latest version of httpd and firewalld installed
-      yum:
-        name:
-          - httpd
-          - firewalld
-        state: latest
-    - name: test html page is installed
-      copy:
-        content: "Welcome to the example.com intranet!\n"
-        dest: /var/www/html/index.html
+  - name: Add groups
+    ansible.builtin.group:
+      name: mert
+      state: present
