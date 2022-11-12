@@ -1,20 +1,25 @@
-- name: Add node key
-  sudo: yes
-  apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
+- hosts: localhost
+  gather_facts: false
+  remote_user: root
 
-- name: Add repos
-  sudo: yes
-  apt_repository: repo='deb https://deb.nodesource.com/node precise main'
-  
-- name: Install packages
-  sudo: yes
-  apt: upgrade=dist
-  apt: pkg= state=installed update_cache=yes
-  with_items:
- 
-  - nodejs
-  - git-core
+  tasks:
+    - name: Add node key
+      sudo: yes
+      apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
 
-- name: Setup Forever
-  sudo: yes
-  npm: name=forever global=yes
+    - name: Add repos
+      sudo: yes
+      apt_repository: repo='deb https://deb.nodesource.com/node precise main'
+
+    - name: Install packages
+      sudo: yes
+      apt: upgrade=dist
+      apt: pkg= state=installed update_cache=yes
+      with_items:
+
+      - nodejs
+      - git-core
+
+    - name: Setup Forever
+      sudo: yes
+      npm: name=forever global=yes
