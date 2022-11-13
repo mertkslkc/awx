@@ -1,5 +1,5 @@
 - name: Grup ekleme talimatlarını gönder
-  hosts: node1
+  hosts: 10.0.159.4
   become: yes
   tasks:
   - name: Add groups
