@@ -1,5 +1,5 @@
 - name: Grup ekleme talimatlarını gönder
-  hosts: 10.0.159.4
+  hosts: 10.0.166.5
   become: yes
   tasks:
   - name: Add groups
