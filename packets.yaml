@@ -1,4 +1,4 @@
-- name: dependencies
+- name: packets
   hosts: all
   become: yes
   tasks:
