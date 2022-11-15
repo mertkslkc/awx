@@ -4,16 +4,16 @@
   tasks:
     - name: Add node key
       sudo: yes
-      apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
+      apk_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
 
     - name: Add repos
       sudo: yes
-      apt_repository: repo='deb https://deb.nodesource.com/node precise main'
+      apk_repository: repo='deb https://deb.nodesource.com/node precise main'
 
     - name: Install packages
       sudo: yes
-      apt: upgrade=dist
-      apt: pkg= state=installed update_cache=yes
+      apk: upgrade=dist
+      apk: pkg= state=installed update_cache=yes
       with_items:
 
       - nodejs
