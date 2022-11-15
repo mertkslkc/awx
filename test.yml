@@ -1,8 +1,8 @@
-- name: Grup ekleme talimatlarını gönder
+- name: grup ekleme taskı çalışıyor
   hosts: all
   become: yes
   tasks:
-  - name: Add groups
+  - name: mert isimli grubu ekle
     ansible.builtin.group:
       name: mert
       state: present
