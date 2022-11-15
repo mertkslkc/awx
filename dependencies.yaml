@@ -1,26 +1,9 @@
 - name: Dependencies
   hosts: all
-  collections:
-    - name: general.apk
   become: yes
   tasks:
-    - name: Add node key
-      sudo: yes
-      apk_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
-
-    - name: Add repos
-      sudo: yes
-      apk_repository: repo='deb https://deb.nodesource.com/node precise main'
-
-    - name: Install packages
-      sudo: yes
-      apk: upgrade=dist
-      apk: pkg= state=installed update_cache=yes
-      with_items:
-
-      - nodejs
-      - git-core
-
-    - name: Setup Forever
-      sudo: yes
-      npm: name=forever global=yes
+  - name: Update repositories and install foo package
+    community.general.apk:
+      name: httpd
+      update_cache: true
+  
