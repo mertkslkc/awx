@@ -2,10 +2,9 @@
   hosts: all
   become: yes
   tasks:
-    - name: start SSHD
+    - name: start httpd
       command: httpd
       
     - name: Çıktı
     debug:
       msg: "{{ RESULT.STDERR_LINES }}"
-
