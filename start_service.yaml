@@ -2,8 +2,7 @@
   hosts: all
   become: yes
   tasks:
-    - name: Restart SSHD
-      service:
-        name: httpd
-        state: started
-      become: true
+    - name: start SSHD
+      command: httpd
+
+
