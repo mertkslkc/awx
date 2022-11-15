@@ -4,5 +4,5 @@
   tasks:
     - name: Start service httpd, if not started
       ansible.builtin.service:
-        name: apache2
+        name: httpd
         state: started
