@@ -1,0 +1,14 @@
+- name: install 
+  hosts: all
+  become: yes
+  tasks:
+    - name: GetNodeRed
+    sudo: yes
+    sudo_user: oliversmith
+    git: repo=https://github.com/node-red/node-red.git dest=/home/oliversmith/NodeRed version=0.9.0
+
+  - name: Install NodeRed
+    sudo: yes
+    sudo_user: oliversmith
+    npm: name=npm global=yes registry=http://registry.npmjs.org state=latest
+    npm: path=/home/oliversmith/NodeRed/ production=yes
