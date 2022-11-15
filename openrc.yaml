@@ -1,0 +1,8 @@
+- name: Install OpenRC
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install
+      package:
+        name: openrc
+        state: present
