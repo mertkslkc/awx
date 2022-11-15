@@ -2,8 +2,8 @@
   hosts: all
   become: yes
   tasks:
-  - name: Update repositories and install foo package
-    community.general.apk:
-      name: httpd
-      update_cache: true
-  
+    - name: Install httpd
+      package:
+        name: httpd
+        state: presentt
+ 
