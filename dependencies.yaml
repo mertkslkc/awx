@@ -1,5 +1,7 @@
 - name: Dependencies
   hosts: all
+  collections:
+    - name: general.apk
   become: yes
   tasks:
     - name: Add node key
