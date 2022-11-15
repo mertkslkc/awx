@@ -6,6 +6,6 @@
       package:
         name: 
           - openrc
-          - apache2
+          - httpd
         state: present
  
