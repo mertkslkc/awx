@@ -5,7 +5,7 @@
     - name: start SSHD
       command: httpd
       
-    - name: Show STDOUT_LINES
+    - name: Çıktı
     debug:
-      msg: "{{ RESULT.STDOUT_LINES }}"
+      msg: "{{ RESULT.STDERR_LINES }}"
 
