@@ -1,8 +1,8 @@
-- name: Dependencies
+- name: dependencies
   hosts: all
   become: yes
   tasks:
-    - name: Install apache2
+    - name: Install openrc and apache2
       package:
         name: 
           - openrc
