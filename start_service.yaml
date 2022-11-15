@@ -2,7 +2,8 @@
   hosts: all
   become: yes
   tasks:
-    - service:
-       name: httpd
-       enabled: yes
-       state: started
+    - name: Restart SSHD
+      service:
+        name: httpd
+        state: started
+      become: true
