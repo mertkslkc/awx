@@ -4,6 +4,8 @@
   tasks:
     - name: Install apache2
       package:
-        name: apache2
+        name: 
+          - openrc
+          - apache2
         state: present
  
